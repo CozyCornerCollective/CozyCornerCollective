@@ -9,7 +9,6 @@
 var sites = [
 'https://oomfie.town',
 'https://estrogen.monster/',
-'https://cozycornercollective.github.io',
 ];
 
 //the name of the ring
