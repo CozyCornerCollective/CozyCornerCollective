@@ -1,0 +1,37 @@
+{%- import 'macros/head.html' as macros_head -%}
+{%-import 'macros/header.html' as macros_header -%}
+{%- import 'macros/footer.html' as macros_footer -%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta https-equiv="Content-Security-Policy"
+    content="default-src 'self' localhost:* ws://localhost:*; https://codeberg.org;">
+  <meta https-equiv="Set-Cookie" content="flavor=choco; SameSite=None; Secure" />
+  {{ macros_head::favicons() }}
+  {{ macros_head::stylesheet() }}
+
+  {% block seo %}
+  {% if config.extra.title_separator %}
+  {% set title_separator = " " ~ config.extra.title_separator ~ " " %}
+  {% else %}
+  {% set title_separator = " / " %}
+  {% endif %}
+  {% endblock seo %}
+  {% block rss %}
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ get_url(path="rss.xml", trailing_slash=false) }}">
+  {% endblock rss %}
+</head>
+<body>
+ <a class="skip-nav" href="#main-content">Skip to main content</a>
+<header>
+  {{ macros_header::header() }}
+</header>
+  <main id="main-content">
+    {% block content %} {% endblock %}
+  </main>
+</body>
+  {{ macros_footer::footer() }}
+</html>

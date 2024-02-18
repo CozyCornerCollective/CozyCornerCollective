@@ -1,0 +1,38 @@
+title = "Cozy Corner"
+description = "A community of creatures."
+# The URL the site will be built for
+base_url = "https://CozyCornerCollective.github.io"
+
+# Whether to automatically compile all Sass files in the sass directory
+compile_sass = true
+
+taxonomies = [
+    {name = "categories", feed = true},
+    {name = "tags", feed = true},
+]
+
+# Whether to build a search index to be used later on by a JavaScript library
+build_search_index = false
+
+# Where are tags and categories displayed
+tag_page = "/tags/"
+category_page = "/categories/"
+
+[markdown]
+# Whether to do syntax highlighting
+# Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
+highlight_code = true
+highlight_theme = "css"
+
+
+[extra]
+# Put all your custom variables here
+
+title_separator = "/"
+title_addition = ""
+
+[extra.open]
+enable = true
+# this image will be used as fallback if a page has no image of its own
+image = "/logo.png"
+og_locale = "en_US"

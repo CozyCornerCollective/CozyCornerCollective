@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block seo %}
+  {{ super() }}
+  {% set title = "Home" %}
+
+  {% if config.title %}
+    {% set title_addition = title_separator ~ config.title %}
+  {% else %}
+    {% set title_addition = "" %}
+  {% endif %}
+
+{% set description = config.description %}
+
+{{ macros_head::seo(title=title, title_addition=title_addition, description=description, is_home=true, type="website")
+}}
+{% endblock seo %}
+
+{% block content %}
+<h1>Hello, Travialeal</h1>
+  <p>Welcome to Cozy Corner Collective.</p>
+  <h2>What is Cozy Corner Collective?</h2>
+  <p>Cozy Corner Collective is a group of creatures who love cozy and stuff like gay sex.</p>
+
+
+  <div id='cozyCorner'>
+  <link rel="stylesheet" href="/webring/onionring.css">
+  <script type="text/javascript" src="/webring/onionring-variables.js"></script>
+  <script type="text/javascript" src="/webring/onionring-widget.js"></script>
+  </div>
+{% endblock content %}
